@@ -3,3 +3,4 @@ Core/build/
 scan_blob.bin
 xcuserdata/
 *.xcuserstate
+__pycache__/
