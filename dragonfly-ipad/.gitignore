@@ -1,0 +1,5 @@
+ThirdParty/
+Core/build/
+scan_blob.bin
+xcuserdata/
+*.xcuserstate

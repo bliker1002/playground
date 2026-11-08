@@ -1,0 +1,28 @@
+//
+//  DragonflyUserClient.iig
+//  Connection object the app opens to send/receive reports through DragonflyDriver.
+//
+
+#ifndef DragonflyUserClient_h
+#define DragonflyUserClient_h
+
+#include <Availability.h>
+#include <DriverKit/IOUserClient.iig>
+
+class DragonflyUserClient: public IOUserClient
+{
+public:
+    virtual bool init() override;
+    virtual void free() override;
+
+    virtual kern_return_t Start(IOService * provider) override;
+    virtual kern_return_t Stop(IOService * provider) override;
+
+    virtual kern_return_t ExternalMethod(uint64_t selector,
+                                         IOUserClientMethodArguments * arguments,
+                                         const IOUserClientMethodDispatch * dispatch,
+                                         OSObject * target,
+                                         void * reference) override;
+};
+
+#endif /* DragonflyUserClient_h */
